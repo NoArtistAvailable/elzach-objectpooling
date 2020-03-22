@@ -6,7 +6,7 @@
   "unity": "2019.3",
   "unityRelease":"0a1",
   "displayName": "elzach Objectpooling",
-  "keywords": [ "unity",
+  "keywords": [ "unity" ],
   "repository": {
     "type": "git",
     "url": "https://gitlab.com/felix.reinemann/elzach-objectpooling"
