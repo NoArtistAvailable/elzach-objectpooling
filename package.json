@@ -1,0 +1,21 @@
+{
+  "name": "elzach.objectpooling",
+  "description": "System to pool objects instead of creating/destroying.",
+  "author": { "name":"elZach", "email":"dontmessageme","url":"-" },
+  "version": "0.0.1",
+  "unity": "2019.3",
+  "unityRelease":"0a1",
+  "displayName": "elzach Objectpooling",
+  "keywords": [ "unity",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/felix.reinemann/elzach-objectpooling"
+  },
+  "samples": [
+	{
+	    "sample": "ObjectPoolingSample",
+	    "description": "This is a sample showing the level generation.",
+	    "path": "Samples/PoolingSample"
+	}
+  ]
+}
