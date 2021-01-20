@@ -50,7 +50,13 @@ namespace elZach.Common
             return clone;
         }
 
-        public static GameObject SpawnAndStart(GameObject prefab, Transform parent)
+        public static T SpawnAndStart<T>(T prefab, Transform parent = null)
+        {
+            var monoBehaviour = prefab as MonoBehaviour;
+            return SpawnAndStart(monoBehaviour.gameObject, parent).GetComponent<T>();
+        }
+
+        public static GameObject SpawnAndStart(GameObject prefab, Transform parent = null)
         {
             GameObject clone = Spawn(prefab, parent);
             clone.SendMessage("Start");
