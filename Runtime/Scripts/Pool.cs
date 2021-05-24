@@ -11,6 +11,8 @@ namespace elZach.Common
         Dictionary<GameObject, List<GameObject>> pools = new Dictionary<GameObject, List<GameObject>>();
         Dictionary<GameObject, GameObject> spawnedObjects = new Dictionary<GameObject, GameObject>();
 
+        static bool isQuitting;
+
         private void Awake()
         {
             if (Instance)
@@ -19,6 +21,7 @@ namespace elZach.Common
                 return;
             }
             Instance = this;
+            Application.quitting += () => isQuitting = true;
         }
 
 
@@ -86,7 +89,7 @@ namespace elZach.Common
 
         public static void Despawn(GameObject go)
         {
-            if (!Instance || !Instance.spawnedObjects.ContainsKey(go))
+            if (!Instance || !Instance.spawnedObjects.ContainsKey(go) && !isQuitting)
             {
                 Destroy(go);
                 return;
