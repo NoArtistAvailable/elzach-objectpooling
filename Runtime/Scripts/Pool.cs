@@ -89,7 +89,7 @@ namespace elZach.Common
 
         public static void Despawn(GameObject go)
         {
-            if (!Instance || !Instance.spawnedObjects.ContainsKey(go) && !isQuitting)
+            if (!Instance || !Instance.spawnedObjects.ContainsKey(go) && !isQuitting && Application.isPlaying)
             {
                 Destroy(go);
                 return;
