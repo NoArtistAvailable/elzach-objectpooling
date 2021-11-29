@@ -33,6 +33,15 @@ public static class GameObjectExtensions
         return Pool.Spawn(prefab, parent);
     }
 
+    public static T Spawn<T>(this T prefab) where T : Component
+    {
+        return Pool.Spawn(prefab.gameObject, null).GetComponent<T>();
+    }
+    public static T Spawn<T>(this T prefab, Transform parent) where T : Component
+    {
+        return Pool.Spawn(prefab.gameObject, parent).GetComponent<T>();
+    }
+
     public static GameObject SpawnAndStart(this GameObject prefab)
     {
         return Pool.SpawnAndStart(prefab, null);
@@ -55,6 +64,11 @@ public static class GameObjectExtensions
     public static void Despawn(this GameObject go)
     {
         Pool.Despawn(go);
+    }
+
+    public static void Despawn<T>(this T component) where T : Component
+    {
+        Pool.Despawn(component.gameObject);
     }
 }
 //}

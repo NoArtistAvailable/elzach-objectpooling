@@ -96,6 +96,7 @@ namespace elZach.Common
             }
             List<GameObject> cache = Instance.pools[Instance.spawnedObjects[go]];
             cache.Add(go);
+            go.transform.SetParent(Instance.transform);
             go.SetActive(false);
         }
     }
